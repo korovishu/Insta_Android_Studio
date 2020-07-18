@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Insta</string>
+    <string name="log_in">Log In</string>
+    <string name="register">Register</string>
+    <string name="username">username</string>
+    <string name="full_name">Full name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_redirect">Already have an account? Log in</string>
+    <string name="signup_redirect">Don\'t have an account? Sign Up</string>
+    <string name="wait">please wait...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
+    <string name="search_bar">Search...</string>
+    <string name="post">POST</string>
+    <string name="description">Description</string>
+    <string name="add_a_comment">add a comment...</string>
+</resources>
