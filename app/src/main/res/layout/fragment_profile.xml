@@ -9,13 +9,13 @@
         android:id="@+id/bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/background">
+        android:background="?android:attr/windowBackground">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?android:attr/background">
+            android:background="?android:attr/windowBackground">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -101,7 +101,8 @@
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:text="posts"/>
 
 
                         </LinearLayout>
@@ -123,7 +124,8 @@
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:text="followers"/>
 
 
                         </LinearLayout>
@@ -145,7 +147,8 @@
                                 android:textStyle="bold"/>
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:text="following"/>
 
 
                         </LinearLayout>

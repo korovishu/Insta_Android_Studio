@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
-        android:background="?android:attr/background"/>
+        android:background="?android:attr/windowBackground"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
@@ -53,6 +53,7 @@
             android:layout_marginEnd="5dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:text="@string/post"
             android:textColor="@color/colorPrimary"
             android:layout_marginRight="5dp"
             android:layout_alignParentRight="true" />

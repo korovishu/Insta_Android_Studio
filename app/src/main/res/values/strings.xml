@@ -16,7 +16,7 @@
     <string name="notification">Notification</string>
     <string name="profile">Profile</string>
     <string name="search_bar">Search...</string>
-    <string name="post">POST</string>
     <string name="description">Description</string>
     <string name="add_a_comment">add a comment...</string>
+    <string name="post">POST</string>
 </resources>

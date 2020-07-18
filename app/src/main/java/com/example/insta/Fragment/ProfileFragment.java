@@ -153,7 +153,7 @@ public class ProfileFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                followers.setText(""+snapshot.getChildrenCount());
+                followers.setText(""+snapshot.getChildrenCount());
             }
 
             @Override
@@ -168,7 +168,7 @@ public class ProfileFragment extends Fragment {
         reference1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                following.setText(""+snapshot.getChildrenCount());
+                following.setText(""+snapshot.getChildrenCount());
             }
 
             @Override
@@ -190,7 +190,7 @@ public class ProfileFragment extends Fragment {
                     if(post.getPublisher().equals(profileid)) i++;
                 }
 
-//                posts.setText(""+i);
+                posts.setText(""+i);
             }
 
             @Override
