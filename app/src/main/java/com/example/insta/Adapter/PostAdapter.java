@@ -62,14 +62,29 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         }
 
         publisherInfo(holder.image_profile, holder.username, holder.publisher, post.getPublisher());
-        isLiked(post.getPostid(),holder.like);
-        nrLikes(holder.likes,post.getPostid());
-        getComments(post.getPostid(),holder.comments);
+        isLiked(post.getPostid(), holder.like);
+        nrLikes(holder.likes, post.getPostid());
+        getComments(post.getPostid(), holder.comments);
+        isSaved(post.getPostid(), holder.save);
+
+        holder.save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (holder.save.getTag().equals("save")) {
+                    FirebaseDatabase.getInstance().getReference().child("Saves").child(firebaseUser.getUid())
+                            .child(post.getPostid()).setValue(true);
+                } else {
+                    FirebaseDatabase.getInstance().getReference().child("Saves").child(firebaseUser.getUid())
+                            .child(post.getPostid()).removeValue();
+                }
+            }
+        });
+
 
         holder.like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(holder.like.getTag().equals("like")) {
+                if (holder.like.getTag().equals("like")) {
                     FirebaseDatabase.getInstance().getReference().child("Likes").child(post.getPostid())
                             .child(firebaseUser.getUid()).setValue(true);
                 } else {
@@ -210,4 +225,29 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         });
     }
 
+    private void isSaved(final String postid, final ImageView imageView) {
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        assert firebaseUser != null;
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Saves")
+                .child(firebaseUser.getUid());
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.child(postid).exists()) {
+                    imageView.setImageResource(R.drawable.ic_save_black);
+                    imageView.setTag("saved");
+                } else {
+                    imageView.setImageResource(R.drawable.ic_savee_back);
+                    imageView.setTag("save");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }
